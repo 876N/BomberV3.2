@@ -33,7 +33,7 @@ Bomber v3.2 is a professional C++ utility designed to simplify the process of cr
 ### Option 2: Build from Source
 1. Clone the repository:
    ```
-   git clone https://github.com/ABOLHB/bomber-v3.2.git
+   git clone https://github.com/876N/bomber-v3.2.git
    ```
 2. Open the solution in Visual Studio 2019 or later
 3. Build the project in Release mode
@@ -186,7 +186,7 @@ Located in `main.cpp`
 3. **Security Testing**: May be used in authorized penetration testing engagements
 4. **Compliance**: Ensure compliance with all applicable laws and regulations
 
-The creator (ABOLHB) assumes no responsibility for misuse of this software.
+The creator (ABOLHB&KSR) assumes no responsibility for misuse of this software.
 
 ## Troubleshooting
 
@@ -243,9 +243,9 @@ This project is released as open-source software. See LICENSE file for details.
 
 ## Credits
 
-**Developed by ABOLHB**
+**Developed by Freemasonry**
 
-Copyright © 2024 ABOLHB. All rights reserved.
+Copyright © 2024 FREEMASONRY. All rights reserved.
 
 ## Support
 
