@@ -39,6 +39,34 @@ Bomber v3.2 is a professional C++ utility designed to simplify the process of cr
 3. Build the project in Release mode
 4. Run the compiled executable
 
+## Project Structure
+
+```
+BomberCpp/
+├── Bomber.sln                    # Visual Studio solution file
+├── ImGui Standalone/
+│   ├── Bomber.rc                 # Resource file
+│   ├── Bomber.aps                # Binary resource file
+│   ├── icon1.ico                 # Application icon
+│   ├── ImGui Standalone.vcxproj  # Project file
+│   ├── ImGui Standalone.vcxproj.filters
+│   ├── ImGui Standalone.vcxproj.user
+│   ├── main.cpp                  # Application entry point
+│   ├── pch.h                     # Precompiled header
+│   ├── resource.h                # Resource definitions
+│   ├── ImGui/                    # ImGui library files
+│   ├── src/
+│   │   ├── UI.cpp               # Window management
+│   │   ├── UI.h                 # Window management header
+│   │   ├── ui/
+│   │   │   ├── Drawing.cpp      # Interface rendering
+│   │   │   └── Drawing.h        # Interface rendering header
+│   │   └── ext/
+│   │       ├── MasonBomber.cpp  # Core upload/download logic
+│   │       └── MasonBomber.h    # Core logic header
+│   └── x64/                      # Build output directory
+```
+
 ## Usage Guide
 
 ### Step 1: Select File
@@ -92,6 +120,63 @@ Start-Process -FilePath $tempFile - Wait
 - Dear ImGui for graphical interface
 - DirectX 11 for rendering
 
+### Key Components
+
+#### MasonBomber Class
+Located in `src/ext/MasonBomber.cpp/.h`
+- Handles file uploads to Catbox.moe
+- Generates random filenames
+- Creates PowerShell scripts
+- Manages one-liner command generation
+
+#### Drawing Class
+Located in `src/ui/Drawing.cpp/.h`
+- Implements the graphical user interface
+- Manages visual styling and effects
+- Handles user interactions
+- Displays generated commands and history
+
+#### UI Class
+Located in `src/UI.cpp/.h`
+- Manages window creation and events
+- Handles DirectX 11 rendering
+- Processes Windows messages
+- Coordinates between components
+
+#### Main Entry Point
+Located in `main.cpp`
+- Application startup
+- Initializes the UI system
+
+## Building Instructions
+
+### Prerequisites
+- Visual Studio 2019 or later with C++ support
+- Windows SDK
+- DirectX SDK (optional, for advanced features)
+
+### Build Steps
+
+1. **Open Solution**
+   ```
+   Open "Bomber.sln" in Visual Studio
+   ```
+
+2. **Configure Build Settings**
+   - Select "Release" configuration
+   - Choose "x86" platform
+   - Ensure all dependencies are properly linked
+
+3. **Build Project**
+   - Right-click on "ImGui Standalone" project
+   - Select "Build"
+   - The executable will be created in `x86/Release/` directory
+
+4. **Troubleshooting Build Issues**
+   - Ensure ImGui files are properly included
+   - Verify Windows SDK version compatibility
+   - Check library paths for wininet, shell32, comdlg32, and user32
+
 ## Security Notes
 
 ⚠️ **Important**: This tool is intended for legitimate purposes only:
@@ -119,21 +204,38 @@ The creator (ABOLHB) assumes no responsibility for misuse of this software.
 - "Failed to upload file" - Network issue or hosting service problem
 - "Failed to create PowerShell script" - File permission or disk space issue
 
+### Runtime Issues
+- **Missing DLLs**: Ensure Microsoft Visual C++ Redistributable is installed
+- **Administrator Privileges**: Some operations may require elevated permissions
+- **Antivirus Interference**: Temporarily disable antivirus if it blocks upload functionality
+
 ## Development
 
-### Building the Project
-1. Install Visual Studio 2019+ with C++ support
-2. Install vcpkg or manually include:
-   - Dear ImGui
-   - DirectX SDK
-3. Configure include directories and library paths
-4. Build the solution
+### Adding Features
+1. **Modify MasonBomber.cpp** for core logic changes
+2. **Update Drawing.cpp** for interface modifications
+3. **Edit UI.cpp** for window management changes
 
-### Code Overview
-The application uses:
-- **MasonBomber class**: Handles file operations and upload logic
-- **Drawing class**: Manages the ImGui interface and rendering
-- **UI class**: Window creation and message processing
+### Code Style Guidelines
+- Use descriptive variable names
+- Add comments for complex logic
+- Follow existing formatting conventions
+- Test changes thoroughly before committing
+
+### Contributing
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request with detailed description
+
+## Release Notes
+
+### Version 3.2
+- Enhanced user interface with visual effects
+- Improved file upload reliability
+- Added command history with timestamps
+- Implemented export functionality
+- Fixed various bugs and performance issues
 
 ## License
 
